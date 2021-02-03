@@ -4,6 +4,7 @@
 Le programme sert à la pratique de l'analyse discriminante linéaire (prédicitive). Il se base sur le fonctionnement des procédures [DISCRIM](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_discrim_sect029.htm) et [STEPDISC](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_stepdisc_sect017.htm) de SAS.
 Le programme produit les fonctions de classement, permet de réaliser une prédiction à partir d'un ensemble de données et un mécanisme de sélection de variables a été implémenté.
 Un reporting automatique des résultats est également disponible, en HTML ou en PDF.
+
 Réalisé par [AbdDia](https://github.com/AbdDia) et [ASKruchinina](https://github.com/ASKruchinina) et [Valinquish](https://github.com/Valinquish) dans le cadre d'un projet en L3 IDS (Informatique et Statistique pour la Science des Données) à l'Université Lyon 2.
 
 # Usage et explications
@@ -27,8 +28,8 @@ lda = LDA(dataset, varName)
 * `n` : la taille de l'échantillon
 * `p` : le nombre de variables explicatives
 * `K` : le nombre de classes
-* `V` : les matrices de covariance totale 
-* `Vb` : les matrices de covariance biaisée
+* `V` : la matrice de covariance totale 
+* `Vb` : la matrice de covariance biaisée
 * `W` : la matrice de covariance intra-classe
 * `Wb` : la matrice de covariance intra-classe biaisée
 
@@ -130,6 +131,7 @@ HTML().stepdisc_html_output(lda, outputFileName.html)
 The program is used to practice linear (predictive) discriminant analysis. It is based on the SAS [DISCRIM](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_discrim_sect029.htm) and [STEPDISC](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_stepdisc_sect017.htm) procedures.
 The program produces ranking functions, allows to make a prediction from a data set and a variable selection mechanism has been implemented.
 Automatic reporting of results is also available, in HTML or PDF format.
+
 Carried out by [AbdDia](https://github.com/AbdDia) and [ASKruchinina](https://github.com/ASKruchinina) and [Valinquish](https://github.com/Valinquish) as part of a project in L3 IDS (Computer Science and Statistics for Data Science) at the Lumière Lyon 2 University (France).
 
 # Usage and explanations
@@ -153,8 +155,8 @@ From there, the user will be able to directly call the different methods to perf
 * `n`: the sample size
 * `p`: the number of explanatory variables
 * `K`: the number of classes
-* `V`: the total covariance matrices
-* `Vb`: the biased covariance matrices
+* `V`: the total covariance matrix
+* `Vb`: the biased covariance matrix
 * `W`: the intra-class covariance matrix
 * `Wb`: the biased intra-class covariance matrix
 
