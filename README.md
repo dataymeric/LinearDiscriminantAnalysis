@@ -140,7 +140,7 @@ After loading your data using the [`pandas`](https://pandas.pydata.org) library 
 ```python
 from discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
-lda = LinearDiscrimnantAnalysis(dataset, varName)
+lda = LDA(dataset, varName)
 ```
 
 From there, the user will be able to directly call the different methods to perform the calculations he wants, as well as the different attributes of the created object, if he wants to retrieve specific parameters.
