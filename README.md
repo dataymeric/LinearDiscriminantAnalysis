@@ -2,7 +2,7 @@
 *English version below*
 
 Le programme sert à la pratique de l'analyse discriminante linéaire (prédicitive). Il se base sur le fonctionnement des procédures [DISCRIM](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_discrim_sect029.htm) et [STEPDISC](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_stepdisc_sect017.htm) de SAS.
-Le programme produit les fonctions de classement, permet de réaliser une prédiction à partir d'un ensemble de données et un mécanisme de sélection de variables à été implémenté.
+Le programme produit les fonctions de classement, permet de réaliser une prédiction à partir d'un ensemble de données et un mécanisme de sélection de variables a été implémenté.
 Un reporting automatique des résultats est également disponible, en HTML ou en PDF.
 Réalisé par [AbdDia](https://github.com/AbdDia) et [ASKruchinina](https://github.com/ASKruchinina) et [Valinquish](https://github.com/Valinquish) dans le cadre d'un projet en L3 IDS (Informatique et Statistique pour la Science des Données) à l'Université Lyon 2.
 
@@ -14,23 +14,23 @@ Après avoir chargé vos données à l'aide de la bibliothèque [`pandas`](https
 ```python
 from discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
-lda = LinearDiscrimnantAnalysis(dataset, varName)
+lda = LDA(dataset, varName)
 ```
 
-À partir de là, l’utilisateur pourra directement appeler les différentes méthodes pour réaliser les calculs qu’il souhaite ainsi que les différents attributs s’il veut récupérer des paramètres précis.
+À partir de là, l’utilisateur pourra directement appeler les différentes méthodes pour réaliser les calculs qu’il souhaite, ainsi que les différents attributs de l'objet créé, s’il veut récupérer des paramètres précis.
 
 ### Attributs disponibles après la création de l'objet :
-* `dataset` : le jeu de données ;
-* `classEtiquette` : le nom de la variable cible ;
-* `classNames` : les noms des valeurs prises pour la variable cible ;
-* `varNames` : les noms des variables explicatives ;
-* `n` : la taille de l'échantillon ;
-* `p` : le nombre de variables explicatives ;
-* `K` : le nombre de classes ;
-* `V` : les matrices de covariance totale ; 
-* `Vb` : les matrices de covariance biaisée ;
-* `W` : la matrice de covariance intra-classe ;
-* `Wb` : la matrice de covariance intra-classe biaisée ;
+* `dataset` : le jeu de données
+* `classEtiquette` : le nom de la variable cible
+* `classNames` : les noms des valeurs prises pour la variable cible
+* `varNames` : les noms des variables explicatives
+* `n` : la taille de l'échantillon
+* `p` : le nombre de variables explicatives
+* `K` : le nombre de classes
+* `V` : les matrices de covariance totale 
+* `Vb` : les matrices de covariance biaisée
+* `W` : la matrice de covariance intra-classe
+* `Wb` : la matrice de covariance intra-classe biaisée
 
 Ainsi, pour afficher la matrice de covariance biaisée, il suffit de faire :
 ```python
@@ -57,12 +57,12 @@ y_pred = lda.predict(valeurs_a_predire)
 ```
 
 ## Matrice de confusion et taux de précision
-Avoir les prédictions c’est très bien, mais **comment on peut savoir ou plutôt mesurer si ces prédictions sont correctes ou pas ?** La matrice de confusion et le taux de précision y aident. 
+Avoir les prédictions c’est très bien, mais **comment peut-on savoir ou plutôt comment peut-on mesurer si ces prédictions sont correctes ou non ?** La matrice de confusion et le taux de précision y aident. 
 
 La fonction `confusion_matrix()` (*matrice de confusion*) « permet d’obtenir une évaluation non biaisée des performances du modèle en déploiement ». Elle prend le vecteur des vraies valeurs de la variable cible qui n’étaient pas utilisées lors de l’apprentissage et le vecteur des valeurs cibles prédites. Ainsi, **on peut estimer si la fonction est capable de bien prédire**. 
 La fonction renvoie la matrice numérique. La fonction renvoie également un graphique de la matrice de confusion.
 
-La fonction `accuracy_score()` calcule le taux de préicision. Elle prend en entrée les vraies valeurs de la variable cible et les prédictions et renvoie la proportion des prédictions correctes.
+La fonction `accuracy_score()` calcule le taux de précision. Elle prend en entrée les vraies valeurs de la variable cible et les prédictions et renvoie la proportion des prédictions correctes.
 
 ```python
 lda.confusion_matrix(y_true, y_pred)
@@ -87,7 +87,7 @@ lda.stepdisc(0.01,'forward')
 ```
 
 ### Attributs disponibles après l'appel de la fonction :
-* `infoStepResults` : lorsque l’approche de sélection de variables, affiche les différentes valeurs pour la dernière étape
+* `infoStepResults` : affiche les différentes valeurs pour la dernière étape
 * `stepdiscSummary` : résumé de l’approche de sélection de variables
 
 ## Courbe de décroissance de Wilks
@@ -143,20 +143,20 @@ from discriminant_analysis import LinearDiscriminantAnalysis as LDA
 lda = LinearDiscrimnantAnalysis(dataset, varName)
 ```
 
-From there, the user will be able to directly call up the different methods to perform the calculations he wants and the different attributes if he wants to retrieve specific parameters.
+From there, the user will be able to directly call the different methods to perform the calculations he wants, as well as the different attributes of the created object, if he wants to retrieve specific parameters.
 
 ### Attributes available after the creation of the :
-* `dataset`: the data set ;
-* `classLabel`: the name of the target variable ;
-* `classNames`: the names of the values taken for the target variable ;
-* `varNames`: the names of the explanatory variables;
-* `n`: the sample size;
-* `p`: the number of explanatory variables;
-* `K`: the number of classes;
-* `V`: the total covariance matrices; 
-* `Vb`: the biased covariance matrices;
-* `W`: the intra-class covariance matrix;
-* `Wb`: the biased intra-class covariance matrix;
+* `dataset`: the data set
+* `classLabel`: the name of the target variable
+* `classNames`: the names of the values taken for the target variable
+* `varNames`: the names of the explanatory variable
+* `n`: the sample size
+* `p`: the number of explanatory variables
+* `K`: the number of classes
+* `V`: the total covariance matrices
+* `Vb`: the biased covariance matrices
+* `W`: the intra-class covariance matrix
+* `Wb`: the biased intra-class covariance matrix
 
 Thus, to display the biased covariance matrix, just do :
 ```python
@@ -198,10 +198,10 @@ lda.accuracy_score(y_true, y_pred)
 ### Attributes available after calling :
 * `confusionMatrix`: the confusion matrix
 * `confusionMatrixGraph`: graph of the confusion matrix
-* `accuracy`: the rate of accuracy
+* `accuracy`: the accuracy's score
 
-## Variable selection
-The function `stepdisc()` **allows to realize a variable selection method**. It allows the user to take **a `forward` approach** or **a `backward` approach**. 
+## Variable selection (Stepwise Discriminant Analysis)
+The function `stepdisc()` **allows to realize a stepwise discriminant analysis**. It allows the user to take **a `forward` approach** or **a `backward` approach**. 
 It is necessary to set the stopping threshold (risk).
 
 ```python
@@ -214,7 +214,7 @@ lda.stepdisc(0.01, 'forward')
 ```
 
 ### Attributes available after calling :
-* `infoStepResults`: when the variable selection approach, displays the different values for the last step
+* `infoStepResults`: displays the different values for the last step
 * `stepdiscSummary`: summary of the variable selection approach
 
 ## Wilks decay curve
